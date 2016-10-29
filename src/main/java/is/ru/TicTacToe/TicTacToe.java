@@ -1,11 +1,8 @@
 package is.TicTacToe;
 
-import java.util.Scanner;
-
 public class TicTacToe {
     public static void main(String[] args)
 	{
-		Scanner sc = new Scanner(System.sc);
 		Boolean web = false;
 		
 		if (args.length > 0) {
