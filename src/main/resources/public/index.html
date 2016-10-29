@@ -3,9 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title>TicTacToe</title>
-
+	<link type="text/css" rel="stylesheet" href="style.css" />
   </head>
   <body>
+	<div class="gameboard">
       <h1>TicTacToe</h1>
+	  <div class="board">
+		<div class="board-row top">
+			<div class="board-cell first" data-value="0"></div>
+			<div class="board-cell second" data-value="1"></div>
+			<div class="board-cell third" data-value="2"></div>
+		</div>
+		<div class="board-row mid">
+			<div class="board-cell fourth" data-value="0"></div>
+			<div class="board-cell fifth" data-value="1"></div>
+			<div class="board-cell sixth" data-value="2"></div>
+		</div>
+		<div class="board-row bot">
+			<div class="board-cell seventh" data-value="0"></div>
+			<div class="board-cell eighth" data-value="1"></div>
+			<div class="board-cell ninth" data-value="2"></div>
+		</div>
+	  </div>
+	  <div>
+        <button id="board-reset" type="button" class="btn btn-primary" >Reset Board</button>
+      </div>
+	</div>
   </body>
 </html> 
