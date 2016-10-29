@@ -11,7 +11,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName ="is.TicTacToe.TicTacToeWebUI"
+mainClassName ="is.TicTacToe.TicTacToe"
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use 'jcenter' for resolving your dependencies.
