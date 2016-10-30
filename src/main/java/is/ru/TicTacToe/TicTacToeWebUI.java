@@ -8,11 +8,12 @@ public class TicTacToeWebUI implements SparkApplication {
 	private static Board board;
 	private static Player p1, p2, curr;
 	
+	// Sets up the game.
     public static void setupGame()
 	{
 		board = new Board();
-        p1 = new Player("Test1", "X");
-        p2 = new Player("Test2", "O");
+        p1 = new Player("Player 1", "X");
+        p2 = new Player("Player 2", "O");
         curr = p1;
 		
 		staticFileLocation("/public");
@@ -31,6 +32,7 @@ public class TicTacToeWebUI implements SparkApplication {
 		webUI.init();
 	}
 	
+	// Swaps players.
 	public void switchPlayer()
     {
         if(curr == p1)
@@ -43,6 +45,7 @@ public class TicTacToeWebUI implements SparkApplication {
         }
     }
 	
+	// Initializes the game and starts it
 	@Override
     public void init()
     {

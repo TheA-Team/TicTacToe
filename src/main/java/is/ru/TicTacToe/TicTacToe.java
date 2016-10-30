@@ -1,6 +1,8 @@
 package is.TicTacToe;
 
 public class TicTacToe {
+	
+	// Checks if the game asked for is on the web og console.
     public static void main(String[] args)
 	{
 		Boolean web = false;
