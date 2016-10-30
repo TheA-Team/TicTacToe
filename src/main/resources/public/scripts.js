@@ -21,7 +21,7 @@ tic = {
             tic.resetGame();
         });
     },
-	handleMove: function(cell) {
+    handleMove: function(cell) {
         // Handle cell clicked
         $.ajax({
             type: 'post',
@@ -35,9 +35,28 @@ tic = {
                 tic.updateCurrentPlayerStatus();
                 $(".tic-board").removeClass("disabled");
             }
+        }).fail(function() {
+            $("#tic-status").html("Error!").addClass("alert alert-danger");
         });
     },
+    updateCurrentPlayerStatus: function() {
+        // Update the current player
+        $("#tic-status").html("It's your turn, " + tic.currentPlayer + "!");
+    },
+    resetGame: function() {
+        $.ajax({
+            type: 'post',
+            url: '/resetGame'
+        }).done(function(result) {
+            $(".tic-cell").removeClass('cross circle checked');
+            $(".tic-board").removeClass("disabled");
+        }).fail(function() {
+            $("#tic-status").html("Error!").addClass("alert alert-danger");
+        });
 
+        tic.currentPlayer = "X";
+        tic.updateCurrentPlayerStatus();
+    }
 };
 
 $(document).ready(function() {
