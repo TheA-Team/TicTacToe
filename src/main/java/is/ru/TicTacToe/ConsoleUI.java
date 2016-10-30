@@ -48,7 +48,6 @@ public class ConsoleUI{
     }
    
     public void startGame() {
-        //printWelcome();
         initializeGame();
         curr = p1;
  
@@ -56,7 +55,7 @@ public class ConsoleUI{
         System.out.println("------------------------------");
         while (true) {
             System.out.println("It's your turn " + curr.getNickname());
-            System.out.println(board);
+            System.out.println(board.printBoard());
             System.out.print("Select cell from 1 to 9: ");
             int move = getInt(sc.nextLine());
             if (move < 1 || move > 9) {
@@ -70,11 +69,11 @@ public class ConsoleUI{
             board.insertSymbol(curr, move - 1);
  
             if (board.isWinner(curr)) {
-                System.out.println(board);
+                System.out.println(board.printBoard());
                 System.out.println("Winner is: " + curr.getNickname());
                 break;
             } else if (board.isDraw()) {
-                System.out.println(board);
+                System.out.println(board.printBoard());
                 System.out.println("Draw!");
                 break;
             }
