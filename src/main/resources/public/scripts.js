@@ -21,7 +21,22 @@ tic = {
             tic.resetGame();
         });
     },
-
+	handleMove: function(cell) {
+        // Handle cell clicked
+        $.ajax({
+            type: 'post',
+            url: '/handleMove',
+            data: 'cell=' + cell
+        }).done(function(result) {
+            if (result != "") {
+                $("#tic-status").html(result);
+            } else {
+                tic.currentPlayer = tic.currentPlayer == "X" ? "O" : "X";
+                tic.updateCurrentPlayerStatus();
+                $(".tic-board").removeClass("disabled");
+            }
+        });
+    },
 
 };
 
