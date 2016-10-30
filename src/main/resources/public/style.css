@@ -1,0 +1,23 @@
+h1 {
+    color:red;
+}
+
+.board {
+	max-width: 154px;
+}
+
+	.board-cell {
+		position: relative;
+        display: block;
+        height: 50px;
+        width: 50px;
+        float: left;
+	}
+	
+	.board-row {
+		overflow: auto;
+		&.mid {
+            border-bottom: 2px solid #000;
+            border-top: 2px solid #000;
+        }		
+	}
