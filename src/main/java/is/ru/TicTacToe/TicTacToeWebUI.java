@@ -53,13 +53,22 @@ public class TicTacToeWebUI implements SparkApplication {
             }
 
             board.insertSymbol(curr, cell);
-			return "";
+            /*if (board.isWinner(curr)) {
+                return curr.getSymbol() + " has won!";
+            } else if (board.isFull()) {
+                return "Tie!";
+            } else {
+                switchPlayer();
+            }*/
+            return "";
         });
-		post("/resetGame", (req, res) -> {
+
+        post("/resetGame", (req, res) -> {
             board.clearBoard();
             curr = p1;
             return "";
         });
+
         get("/currentPlayer", (req, res) -> curr.getSymbol());
     }
 }

@@ -49,7 +49,7 @@ public class Board {
         return theBoard.toString();
     }
 	
-	// Insert right simble for player.
+	// Insert right symble for player.
 	public void insertSymbol(Player player, int input)
 	{
 		isValidMove(input);
