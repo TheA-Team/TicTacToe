@@ -44,12 +44,7 @@ dependencies {
     
 }
 mainClassName ="is.TicTacToe.TicTacToe"
-jar {
-    manifest {
-        attributes "Main-Class": "is.TicTacToe.TicTacToe"
-    }
-    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-}
+
 
 task stage { dependsOn clean, installDist }
 
