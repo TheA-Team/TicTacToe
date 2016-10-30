@@ -52,7 +52,8 @@ public class TicTacToeWebUI implements SparkApplication {
                 return "";
             }
 
-            board.set(curr, cell);
+            board.insertSymbol(curr, cell);
+			return "";
         });
 		post("/resetGame", (req, res) -> {
             board.clearBoard();
