@@ -37,7 +37,7 @@ board = {
                 $status = $("#board-status");
                 if (result == "X has won!") {
                     $status.html(result).addClass('xwon');
-                } else if (result == "O has won!") {
+                } else if (result == "O has won!" || result == "o has won!") {
                     $status.html(result).addClass('owon');
                 } else {
                     $status.html(result).addClass('tie');
