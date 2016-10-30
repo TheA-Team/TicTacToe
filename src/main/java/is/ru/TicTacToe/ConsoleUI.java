@@ -8,12 +8,14 @@ public class ConsoleUI{
     private Scanner sc;
     private Player p1, p2, curr;
 
+	// Default constructor.
     ConsoleUI()
     {
 		board = new Board();
 		sc = new Scanner(System.in);
     }
 
+	// Get the number from and string input.
     public int getInt(String str)
     {
 		try
@@ -26,6 +28,7 @@ public class ConsoleUI{
 		}
     }
 
+	// Initialize the games players.
     public void initializeGame()
     {
         System.out.println("Enter name for player 1: ");
@@ -34,7 +37,8 @@ public class ConsoleUI{
         System.out.println("Enter name for player 2: ");
         p2 = new Player(sc.nextLine(), "O");
     }
-   
+	
+    // Swaps players.
     public void switchPlayer()
     {
         if(curr == p1)
@@ -47,6 +51,7 @@ public class ConsoleUI{
         }
     }
    
+    // Plays the game.
     public void startGame() {
         initializeGame();
         curr = p1;

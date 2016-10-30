@@ -18,7 +18,7 @@ public class Player {
 		return nickname;
 	}
 	
-	// Returns playersd symbol.
+	// Returns players symbol.
 	public String getSymbol()
 	{
 		return symbol;
@@ -30,7 +30,7 @@ public class Player {
 		nickname = nick;
 	}
 	
-	// Set players symbol.
+	// Sets players symbol.
 	public void setSymbol(String symb)
 	{
 		symbol = symb.substring(0, 1);
