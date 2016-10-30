@@ -1,0 +1,73 @@
+h1 {
+    color:green !important;
+}
+
+#board-status {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    text-align: center;
+    padding: 5px 0;
+    
+}
+
+#board-reset {
+    margin-top: 30px;
+}
+
+.board-board {
+    max-width: 154px;
+    &.disabled .tic-cell {
+        cursor: not-allowed !important;
+    }
+
+    .board-cell {
+        position: relative;
+        display: block;
+        height: 50px;
+        width: 50px;
+        float: left;
+        cursor: pointer;
+
+        &.second {
+            box-sizing: content-box;
+            border-right: 2px solid #000;
+            border-left: 2px solid #000;
+        }
+
+        &.checked {
+            cursor: not-allowed;
+        }
+
+        &.circle {
+            background: lightblue;
+            
+        }
+
+        &.cross {
+            background: lightgreen;
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                top: 24px;
+                left: 5px;
+                width: 40px;
+                height: 2px;
+                background: #000;
+                display: block;
+                transform-origin: 50% 50%;
+                opacity: 0;
+            }
+            
+        }
+    }
+
+    .board-row {
+        overflow: auto;
+        &.second {
+            border-bottom: 2px solid #000;
+            border-top: 2px solid #000;
+        }
+    }
+}

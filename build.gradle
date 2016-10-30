@@ -11,7 +11,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName ="is.TicTacToe.TicTacToe"
+
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use 'jcenter' for resolving your dependencies.
@@ -43,10 +43,15 @@ dependencies {
     seleniumCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
     
 }
-
-task stage {
-   dependsOn clean,installDist
+mainClassName ="is.TicTacToe.TicTacToe"
+jar {
+    manifest {
+        attributes "Main-Class": "is.TicTacToe.TicTacToe"
+    }
+    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
 }
+
+task stage { dependsOn clean, installDist }
 
 repositories {
     maven { url 'http://repo1.maven.org/maven2' }
