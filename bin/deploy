@@ -1,10 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
-APP="TicTacToe" bin/runAll
-
-# If the file exists under /tmp, remove it
-test -f /tmp/${APP}.jar && rm -r /tmp/${APP}.jar cp -r 
-build/libs/${APP}.jar /tmp
-
-# Run application once
-java -jar /tmp/${APP}.jar $1
+./gradlew installDist
+./build/install/TicTacToe/bin/TicTacToe
