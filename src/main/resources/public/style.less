@@ -1,0 +1,70 @@
+h1 {
+    color:red !important;
+}
+#tic-status {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 5px 0;
+}
+#tic-reset {
+    margin-top: 30px;
+}
+.tic-board {
+    max-width: 154px;
+    &.disabled .tic-cell {
+        cursor: not-allowed !important;
+    }
+
+    .tic-cell {
+        position: relative;
+        display: block;
+        height: 50px;
+        width: 50px;
+        float: left;
+        cursor: pointer;
+
+        &.second {
+            box-sizing: content-box;
+            border-right: 2px solid #000;
+            border-left: 2px solid #000;
+        }
+
+        &.circle {
+            background: lightblue;
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                top: 8px;
+                left: 8px;
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                border: 2px solid #000;
+                opacity: 0;
+            }
+            &.checked {
+                &:before,
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &.cross {
+            background: lightgreen;
+            
+        }
+    }
+
+    .tic-row {
+        overflow: auto;
+        &.second {
+            border-bottom: 2px solid #000;
+            border-top: 2px solid #000;
+        }
+    }
+}
